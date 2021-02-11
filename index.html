@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sports-team </title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./css/select2.min.css" />
+  <link rel="stylesheet" href="./css/design.css" />
+</head>
+
+<body>
+  <div class="container mt-3 rounded">
+    <!--header-->
+    <div class="row my-3">
+      <div class="col text-center">
+        <div class="h1 rounded my-2 mx-2">Sports Competition Form</div>
+      </div>
+    </div>
+
+    <form action="/backend.php" method="POST" id="myForm">
+      <!--selecting sports-->
+      <div class="row mt-4">
+        <h5 class="mx-3">Sports Type</h5>
+        <div class="form-group col-sm-6">
+          <select name="sports" id="sports" class="form-control required">
+            <option value="">-- Select your Sports--</option>
+            <option value="2">Chess</option>
+            <option value="3">Basket ball</option>
+            <option value="4">football</option>
+            <option value="5">volleyball</option>
+            <option value="6">Wrestlings</option>
+            <option value="7">Cricket</option>
+            <option value="8">Tennis</option>
+            <option value="9">Hockey</option>
+            <option value="10">Boxing</option>
+            <option value="11">Running</option>
+            <option value="12">Long Jump</option>
+            <option value="13">Surfing</option>
+            <option value="14">Discus throw</option>
+            <option value="15">Badminton</option>
+          </select>
+        </div>
+      </div>
+
+
+      <!--team-->
+      <div class="h5">TEAM</div>
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label>Team-Name <span class="text-danger">*</span></label>
+          <input type="text" name="teamName" id="teamName" class="form-control" />
+        </div>
+        <div class="form-group col-md-4">
+          <label>Contact <span class="text-danger">*</span></label>
+          <input type="number" name="teamContact" id="teamContact" class="form-control " minlength="10" />
+        </div>
+        <div class="form-group col-md-4">
+          <label>Location <span class="text-danger">*</span></label>
+          <input type="text" name="teamLocation" id="teamLocation" class="form-control " />
+        </div>
+      </div>
+      <!--team players-->
+      <div class="h5">TEAM-PLAYERS</div>
+      <div id="teamplayers">
+        <div class="playersdiv">
+          <div class="row">
+            <div class="form-group col-md-3">
+              <label>Name <span class="text-danger">*</span></label>
+              <input type="text" name="playerName[]" class="form-control " />
+            </div>
+            <div class="form-group  col-md-3">
+              <label>Jersey Number <span class="text-danger">*</span></label>
+              <input type="number" name="playerId[]" id="playerId" class="form-control " />
+            </div>
+            <div class="form-group col-md-3">
+              <label>Age <span class="text-danger">*</span></label>
+              <input type="number" name="playerAge[]" id="playerAge" class="form-control" />
+            </div>
+            <div class="form-group col-md-3 mt-3">
+              <button class="btn btn-outline-danger mt-3 btn-block remove-team-player" type="button"
+                onclick="removeplayer();">
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="playersdiv d-none" id="clonePlayersDiv">
+          <div class="row">
+            <div class="form-group col-md-3">
+              <label>Name <span class="text-danger">*</span></label>
+              <input type="text" name="playerName[]" class="form-control " />
+            </div>
+            <div class="form-group  col-md-3">
+              <label>Jersey Number <span class="text-danger">*</span></label>
+              <input type="number" name="playerId[]" class="form-control " />
+            </div>
+            <div class="form-group col-md-3">
+              <label>Age <span class="text-danger">*</span></label>
+              <input type="number" name="playerAge[]" class="form-control" />
+            </div>
+            <div class="form-group col-md-3 mt-3">
+              <button class="btn btn-outline-danger mt-3 btn-block remove-team-player" type="button"
+                onclick="removeplayer();">
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group float-right">
+            <button class="btn btn-primary mr-2" type="button" onclick="addplayers();">
+              Add New Player
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col text-center">
+          <button class="btn text-center btn-block submitbtn" id="confirm" type="submit">
+            Submit Form
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/select2.min.js"></script>
+  <script src="./js/jquery.validate.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

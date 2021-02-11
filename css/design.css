@@ -1,0 +1,14 @@
+.container{
+    border: 1px solid rgb(124, 95, 95);
+}
+.h1{
+    color:rgb(219, 11, 91);
+    border: 1px solid rgb(180, 165, 179);
+}
+.h5{
+    color: rgba(97, 204, 154, 0.719);
+}
+.error{
+    color: red;
+    font-style: italic;
+}
